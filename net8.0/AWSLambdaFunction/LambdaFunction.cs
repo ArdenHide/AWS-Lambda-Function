@@ -9,12 +9,13 @@ namespace AWSLambdaFunction
     {
         private static async Task Main(string[] args)
         {
-            await LambdaBootstrapBuilder.Create(FunctionHandler, new JsonSerializer())
+            Func<string, ILambdaContext, JToken> handler = Run;
+            await LambdaBootstrapBuilder.Create(handler, new JsonSerializer())
                 .Build()
                 .RunAsync();
         }
 
-        public static JToken FunctionHandler(object? message, ILambdaContext context)
+        public static JToken Run(string message, ILambdaContext context)
         {
             var data = new JObject()
             {
