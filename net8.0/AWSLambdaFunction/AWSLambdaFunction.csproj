@@ -25,6 +25,7 @@
   <ItemGroup>
     <RuntimeHostConfigurationOption Include="System.Globalization.AppLocalIcu" Value="68.2.0.9" />
     <PackageReference Include="Amazon.Lambda.Serialization.Json" Version="2.2.0" />
+    <PackageReference Include="AWSLambdaFunction.EntryPoint" Version="1.0.0" />
     <PackageReference Include="Microsoft.ICU.ICU4C.Runtime" Version="68.2.0.9" />
   </ItemGroup>
   <ItemGroup>

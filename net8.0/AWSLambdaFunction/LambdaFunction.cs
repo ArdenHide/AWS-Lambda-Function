@@ -1,9 +1,10 @@
 using Amazon.Lambda.Core;
+using AWSLambdaFunction.EntryPoint;
 using Newtonsoft.Json.Linq;
 
 namespace AWSLambdaFunction
 {
-    [LambdaFunction(typeof(string), typeof(JToken))]
+    [AWSLambdaFunction.EntryPoint.Attributes.LambdaFunction(typeof(string), typeof(JToken))]
     public class LambdaFunction : ILambdaHandler<string, JToken>
     {
         public Func<string, ILambdaContext, JToken> Handler => Run;
