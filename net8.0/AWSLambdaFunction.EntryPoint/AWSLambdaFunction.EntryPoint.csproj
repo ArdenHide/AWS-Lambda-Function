@@ -6,7 +6,7 @@
     <Nullable>enable</Nullable>
     <PackageId>AWSLambdaFunction.EntryPoint</PackageId>
     <Title>Entry point for .NET 8.0 AWS Lambda Function.</Title>
-    <Version>1.0.0</Version>
+    <Version>1.0.1</Version>
     <Authors>ArdenHide</Authors>
     <Company>ArdenHide</Company>
     <Product>AWSLambdaFunction.EntryPoint</Product>
@@ -16,6 +16,7 @@
     <RepositoryUrl>https://github.com/ArdenHide/AWS-Lambda-Function/tree/main/net8.0/AWSLambdaFunction.EntryPoint</RepositoryUrl>
     <PackageReadmeFile>Readme.md</PackageReadmeFile>
     <PackageLicenseFile>LECENSE</PackageLicenseFile>
+    <PackageReleaseNotes>- rename `LambdaFunctionAttribute` to `LambdaEntryPointAttribute`</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>
