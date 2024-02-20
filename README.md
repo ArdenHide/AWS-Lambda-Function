@@ -24,4 +24,4 @@ Once you have followed these steps, you should be able to create a new project b
 
 Alternatively, you can find the template by tags: `AWS` `C#` `Cloud` `Serverless`
 
-![image](https://user-images.githubusercontent.com/66203238/226463162-b61477c0-0233-4d80-8104-6c35691deed1.png)
+![image](https://github.com/ArdenHide/AWS-Lambda-Function/assets/66203238/a88e45ba-46c5-4ae3-b0d2-5ae746bf0212)
