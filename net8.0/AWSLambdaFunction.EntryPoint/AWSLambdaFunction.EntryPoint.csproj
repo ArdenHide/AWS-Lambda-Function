@@ -15,6 +15,7 @@
     <PackageTags>AWS .NET 8.0 </PackageTags>
     <RepositoryUrl>https://github.com/ArdenHide/AWS-Lambda-Function/tree/main/net8.0/AWSLambdaFunction.EntryPoint</RepositoryUrl>
     <PackageReadmeFile>Readme.md</PackageReadmeFile>
+    <PackageLicenseFile>LECENSE</PackageLicenseFile>
   </PropertyGroup>
 
   <ItemGroup>
@@ -23,6 +24,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="LECENSE">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
     <None Update="Readme.md">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
