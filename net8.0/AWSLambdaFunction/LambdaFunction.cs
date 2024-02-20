@@ -1,21 +1,16 @@
 using Amazon.Lambda.Core;
 using Newtonsoft.Json.Linq;
-using Amazon.Lambda.RuntimeSupport;
-using Amazon.Lambda.Serialization.Json;
+using AWSLambdaFunction.Lambda;
+using AWSLambdaFunction.Lambda.Attributes;
 
 namespace AWSLambdaFunction
 {
-    public static class LambdaFunction
+    [LambdaFunction(typeof(string), typeof(JToken))]
+    public class LambdaFunction : ILambdaHandler<string, JToken>
     {
-        private static async Task Main(string[] args)
-        {
-            Func<string, ILambdaContext, JToken> handler = Run;
-            await LambdaBootstrapBuilder.Create(handler, new JsonSerializer())
-                .Build()
-                .RunAsync();
-        }
+        public Func<string, ILambdaContext, JToken> Handler => Run;
 
-        public static JToken Run(string message, ILambdaContext context)
+        public JToken Run(string message, ILambdaContext context)
         {
             var data = new JObject()
             {
