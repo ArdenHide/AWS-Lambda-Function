@@ -13,6 +13,7 @@
     <Description>Entry point for .NET 8.0 AWS Lambda Function.</Description>
     <RepositoryType>git</RepositoryType>
     <PackageTags>AWS .NET 8.0 </PackageTags>
+    <RepositoryUrl>https://github.com/ArdenHide/AWS-Lambda-Function/tree/main/net8.0/AWSLambdaFunction.EntryPoint</RepositoryUrl>
   </PropertyGroup>
 
   <ItemGroup>
