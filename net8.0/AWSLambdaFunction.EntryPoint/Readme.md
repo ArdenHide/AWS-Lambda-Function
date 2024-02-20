@@ -6,7 +6,7 @@ This package introduces a declarative approach to define Lambda entry points usi
 ## Defining Your Lambda Function
 
 - **Implement the `ILambdaHandler<TRequest, TResponse>` Interface**: This interface requires you to define a `Handler` property, which is a function that takes a request of type `TRequest` and an `ILambdaContext`, and returns a response of type `TResponse`.
-- **Annotate Your Class with `LambdaFunctionAttribute`**: Specify the request and response types for your Lambda function by annotating your class with the `LambdaFunctionAttribute`.
+- **Annotate Your Class with `LambdaEntryPointAttribute`**: Specify the request and response types for your Lambda function by annotating your class with the `LambdaEntryPointAttribute`.
 
 ## Example
 Here's a simple example of a Lambda function that accepts a string request and returns a JSON object:
@@ -17,7 +17,7 @@ using Newtonsoft.Json.Linq;
 using AWSLambdaFunction.EntryPoint;
 using AWSLambdaFunction.EntryPoint.Attributes;
 
-[LambdaFunction(typeof(string), typeof(JToken))]
+[LambdaEntryPoint(typeof(string), typeof(JToken))]
 public class LambdaFunction : ILambdaHandler<string, JToken>
 {
     public Func<string, ILambdaContext, JToken> Handler => Run;
