@@ -1,7 +1,5 @@
 using Amazon.Lambda.Core;
 using Newtonsoft.Json.Linq;
-using AWSLambdaFunction.Lambda;
-using AWSLambdaFunction.Lambda.Attributes;
 
 namespace AWSLambdaFunction
 {

@@ -1,6 +1,6 @@
 ﻿using Amazon.Lambda.Core;
 
-namespace AWSLambdaFunction.Lambda;
+namespace AWSLambdaFunction.EntryPoint;
 
 public interface ILambdaHandler<TRequest, TResponse>
 {

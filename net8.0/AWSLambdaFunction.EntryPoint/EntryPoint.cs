@@ -1,18 +1,15 @@
 ﻿using System.Reflection;
 using Amazon.Lambda.RuntimeSupport;
-using AWSLambdaFunction.Lambda.Attributes;
+using AWSLambdaFunction.EntryPoint.Attributes;
 
-namespace AWSLambdaFunction.Lambda;
+namespace AWSLambdaFunction.EntryPoint;
 
 public static class EntryPoint
 {
     public static async Task Main(string[] args)
     {
-        var type = Assembly.GetExecutingAssembly()
-            .GetTypes()
-            .ToList()
+        var type = Assembly.GetExecutingAssembly().GetTypes().ToList()
             .Find(t => t.GetCustomAttributes(typeof(LambdaFunctionAttribute), false).Length > 0);
-
         if (type == null) return;
 
         var attribute = type.GetCustomAttribute<LambdaFunctionAttribute>();
@@ -20,7 +17,6 @@ public static class EntryPoint
 
         var method = typeof(EntryPoint).GetMethod(nameof(RunLambdaAsync), BindingFlags.NonPublic | BindingFlags.Static)
             ?.MakeGenericMethod(attribute.RequestType, attribute.ResponseType);
-
         if (method != null)
         {
             await (Task)method.Invoke(null, new object[] { type });

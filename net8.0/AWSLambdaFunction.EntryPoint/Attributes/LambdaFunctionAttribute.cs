@@ -1,4 +1,4 @@
-﻿namespace AWSLambdaFunction.Lambda.Attributes;
+﻿namespace AWSLambdaFunction.EntryPoint.Attributes;
 
 [AttributeUsage(AttributeTargets.Class)]
 public class LambdaFunctionAttribute : Attribute
