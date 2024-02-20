@@ -14,7 +14,9 @@ To add the `AWS Lambda Function.zip` custom project template to Visual Studio 20
 ```
 C:\Users\<USERNAME>\Documents\Visual Studio 2022\Templates\ProjectTemplates\
 ```
-2. Copy the `AWS Lambda Function.zip` file into this folder.
+2. Copy the `AWS Lambda Function (.NET 6.0).zip` or `AWS Lambda Function (.NET 8.0).zip` file into this folder.
+
+3. (optional): If the template still doesn't appear, try unzipping the zip.
 
 Once you have followed these steps, you should be able to create a new project based on the `AWS Lambda Function` custom project template.
 
@@ -22,4 +24,4 @@ Once you have followed these steps, you should be able to create a new project b
 
 Alternatively, you can find the template by tags: `AWS` `C#` `Cloud` `Serverless`
 
-![image](https://user-images.githubusercontent.com/66203238/226463162-b61477c0-0233-4d80-8104-6c35691deed1.png)
+![image](https://github.com/ArdenHide/AWS-Lambda-Function/assets/66203238/a88e45ba-46c5-4ae3-b0d2-5ae746bf0212)
