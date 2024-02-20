@@ -9,10 +9,10 @@ public static class EntryPoint
     public static async Task Main(string[] args)
     {
         var type = Assembly.GetExecutingAssembly().GetTypes().ToList()
-            .Find(t => t.GetCustomAttributes(typeof(LambdaFunctionAttribute), false).Length > 0);
+            .Find(t => t.GetCustomAttributes(typeof(LambdaEntryPointAttribute), false).Length > 0);
         if (type == null) return;
 
-        var attribute = type.GetCustomAttribute<LambdaFunctionAttribute>();
+        var attribute = type.GetCustomAttribute<LambdaEntryPointAttribute>();
         if (attribute == null) return;
 
         var method = typeof(EntryPoint).GetMethod(nameof(RunLambdaAsync), BindingFlags.NonPublic | BindingFlags.Static)

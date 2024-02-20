@@ -1,12 +1,12 @@
 ﻿namespace AWSLambdaFunction.EntryPoint.Attributes;
 
 [AttributeUsage(AttributeTargets.Class)]
-public class LambdaFunctionAttribute : Attribute
+public class LambdaEntryPointAttribute : Attribute
 {
     public Type RequestType { get; }
     public Type ResponseType { get; }
 
-    public LambdaFunctionAttribute(Type requestType, Type responseType)
+    public LambdaEntryPointAttribute(Type requestType, Type responseType)
     {
         RequestType = requestType;
         ResponseType = responseType;
