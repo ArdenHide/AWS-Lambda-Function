@@ -1,25 +1,21 @@
 using Amazon.Lambda.Core;
 using Newtonsoft.Json.Linq;
-using AWSLambdaFunction.EntryPoint;
-using AWSLambdaFunction.EntryPoint.Attributes;
 
-namespace AWSLambdaFunction
+[assembly: LambdaSerializer(typeof(Amazon.Lambda.Serialization.Json.JsonSerializer))]
+
+namespace AWSLambdaFunction;
+
+public class LambdaFunction
 {
-    [LambdaEntryPoint(typeof(string), typeof(JToken))]
-    public class LambdaFunction : ILambdaHandler<string, JToken>
+    public JToken Run(object? message, ILambdaContext context)
     {
-        public Func<string, ILambdaContext, JToken> Handler => Run;
-
-        public JToken Run(string message, ILambdaContext context)
+        var data = new JObject()
         {
-            var data = new JObject()
-            {
-                new JProperty("message", message)
-            };
+            new JProperty("message", message)
+        };
 
-            context.Logger.Log($"{LogLevel.Debug}", $"{data}");
+        context.Logger.Log($"{LogLevel.Debug}", $"{data}");
 
-            return data;
-        }
+        return data;
     }
 }
