@@ -8,9 +8,8 @@
   "profile": "profile",
   "region": "us-east-1",
   "configuration": "Release",
-  "function-runtime": "provided.al2023",
+  "function-runtime": "dotnet8",
   "function-memory-size": 256,
   "function-timeout": 30,
-  "function-handler": "bootstrap",
-  "msbuild-parameters": "--self-contained true"
+  "function-handler": "AWSLambdaFunction::AWSLambdaFunction.LambdaFunction::Run"
 }
